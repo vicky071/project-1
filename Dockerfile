@@ -15,7 +15,7 @@ RUN unzip academic-education.zip && \
     rm -rf academic-education.zip academic-education
 
 # Expose port 80 for HTTP
-EXPOSE 80 22
+EXPOSE 80 22 88
 
 # Start the Apache web server
 CMD ["httpd-foreground"]
