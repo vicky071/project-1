@@ -1,20 +1,19 @@
-aws eks --region <us-east-1> update-kubeconfig --name <kind: Deployment
 apiVersion: apps/v1
+kind: Deployment
 metadata:
-   name: mrdevops
+  name: my-deployment
 spec:
-   replicas: 2
-   selector:      # tells the controller which pods to watch/belong to
+  replicas: 2
+  selector:
     matchLabels:
-     app: mrdevops
-   template:
-      metadata:
-        labels:
-          app: mrdevops
-      spec:
-       containers:
-        - name: mrdevops
-          image: vicky0711/pipeline-demo
-          imagePullPolicy: Always
-          ports:
-          - containerPort: 80>
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-container
+        image: vicky0711/pipeline-demo
+        ports:
+        - containerPort: 80
